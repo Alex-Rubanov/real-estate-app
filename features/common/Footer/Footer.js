@@ -10,7 +10,7 @@ const Footer = () => {
         maxWidth='1280px'
         margin='0 auto'
         paddingY='3rem'
-        paddingX={{ base: '2rem', sm: '0' }}
+        paddingX={{ base: '2rem', sm: '0.5rem' }}
       >
         <SimpleGrid
           columns='4'
@@ -45,7 +45,7 @@ const Footer = () => {
         </SimpleGrid>
       </Box>
       <Box
-        backgroudColor='blue.900'
+        backgroundColor='blue.900'
         display='flex'
         padding='2rem'
         justifyContent='center'
