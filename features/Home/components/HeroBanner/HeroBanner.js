@@ -6,7 +6,7 @@ const HeroBanner = () => {
     <Fade in>
       <Box
         position='relative'
-        minHeight={{ base: '110vh', sm: '90vh' }}
+        minHeight={{ base: '120vh', md: '85vh' }}
         backgroundImage={`url('./hero/heroBg.jpg')`}
         backgroundPosition='center'
         backgroundSize='cover'
@@ -31,7 +31,10 @@ const HeroBanner = () => {
           margin='0 auto'
           padding='2rem'
         >
-          <Box width={{ base: '100%', sm: '50%' }}>
+          <Box
+            width={{ base: '100%', md: '60%' }}
+            marginRight={{ base: '0', md: '1rem' }}
+          >
             <Text
               fontSize={{ base: '4xl', sm: '4xl' }}
               lineHeight='shorter'
@@ -39,15 +42,15 @@ const HeroBanner = () => {
             >
               Download our new <strong>Property Buying Guide</strong> today...
             </Text>
-            <Text
-              fontSize={{ base: '100%', sm: '2xl' }}
-              marginTop={{ base: '2rem', sm: '0' }}
-            >
+            <Text fontSize={{ base: '100%', sm: '2xl' }}>
               A free PDF with our best secrets for evaluating property purchase,
               calculating profit and so much more.
             </Text>
           </Box>
-          <Box width={{ base: '100%', sm: 'auto' }}>
+          <Box
+            width={{ base: '100%', sm: 'auto' }}
+            marginTop={{ base: '2rem', md: '0' }}
+          >
             <HeroForm />
           </Box>
         </Box>
