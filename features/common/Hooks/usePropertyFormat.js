@@ -11,7 +11,7 @@ export const usePropertyFormat = property => {
   const rooms = property.rooms
   const baths = property.baths
   const purpose = property.purpose
-  const sqSize = property.area.toFixed(2)
+  const sqSize = Math.round(property.area)
   const externalID = property.externalID
 
   return {
