@@ -16,7 +16,7 @@ const TestimonialCard = ({ name, company, image, testimonial }) => {
       <Text fontSize='lg' color='gray.500' marginY='1.8rem'>
         {testimonial}
       </Text>
-      <Flex gap='1rem' alingItems='center'>
+      <Flex gap='1rem' alignItems='center'>
         <Image
           src={image}
           width='6rem'

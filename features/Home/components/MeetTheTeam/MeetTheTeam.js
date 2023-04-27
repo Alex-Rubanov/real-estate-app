@@ -20,7 +20,7 @@ const MeetTheTeam = () => {
       </Text>
       <Text
         fontSize='2xl'
-        fontWeiht='light'
+        fontWeight='light'
         marginTop='1rem'
         marginBottom='2rem'
         paddingX='2rem'

@@ -22,7 +22,7 @@ const Testimonials = () => {
         <Text
           fontSize='2xl'
           fontWeight='light'
-          marignTop='1rem'
+          marginTop='1rem'
           marginBottom='3rem'
           paddingX='2rem'
           textAlign='center'

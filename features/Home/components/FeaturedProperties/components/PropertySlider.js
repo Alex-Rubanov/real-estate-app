@@ -2,15 +2,18 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper'
 
 import PropertyCard from '@/features/common/modules/PropertyCard/PropertyCard'
+import { useIdDesktop } from '@/features/common/Hooks/useIsDesktop'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
 const PropertySlider = ({ featuredProperties }) => {
+  const { isDesktop } = useIdDesktop()
+
   return (
     <Swiper
-      slidesPerView={3}
+      slidesPerView={isDesktop ? 3 : 1}
       spaceBetween={10}
       loop={true}
       centeredSlides={true}
