@@ -2,6 +2,7 @@ import FeaturedProperties from '@/features/Home/components/FeaturedProperties/Fe
 import HeroBanner from '@/features/Home/components/HeroBanner/HeroBanner'
 import MeetTheTeam from '@/features/Home/components/MeetTheTeam/MeetTheTeam'
 import Partners from '@/features/Home/components/Partners/Partners'
+import Testimonials from '@/features/Home/components/Testimonials/Testimonials'
 import DefaultLayout from '@/features/common/modules/Layouts/DefaultLayout/DefaultLayout'
 
 export default function Home ({ featuredProperties }) {
@@ -12,6 +13,7 @@ export default function Home ({ featuredProperties }) {
         <FeaturedProperties featuredProperties={featuredProperties} />
         <MeetTheTeam />
         <Partners />
+        <Testimonials />
       </DefaultLayout>
     </>
   )

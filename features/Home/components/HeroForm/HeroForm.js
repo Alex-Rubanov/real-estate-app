@@ -21,10 +21,11 @@ const HeroForm = () => {
   return (
     <Box
       width='100%'
-      padding='2rem'
+      padding={{ base: '1rem', sm: '2rem' }}
       borderRadius='sm'
       backgroundColor='white'
       color='gray.700'
+      textAlign='center'
     >
       <Text fontSize='xl' fontWeight='bold'>
         Free PDF Guide
@@ -73,22 +74,25 @@ const HeroForm = () => {
               </Text>
             )}
           </Flex>
-          <Checkbox
-            lineHeight='1.2'
-            padding='0.5rem'
-            marginTop='1.3rem'
-            id='gdpr'
-            type='checkbox'
-            placeholder='GDPR'
-            {...register('gdpr', { required: true })}
-          >
-            I consent to having this website store my submitted info
-          </Checkbox>
-          {errors.gdpr && (
-            <Text fontSize='xs' color='red.400'>
-              {errors.gdpr.type}
+          <Flex marginTop='1.3rem'>
+            <Checkbox
+              lineHeight='1.2'
+              padding='0.5rem'
+              id='gdpr'
+              alignItems='flex-start'
+              type='checkbox'
+              placeholder='GDPR'
+              {...register('gdpr', { required: true })}
+            ></Checkbox>
+            {errors.gdpr && (
+              <Text fontSize='xs' color='red.400'>
+                {errors.gdpr.type}
+              </Text>
+            )}
+            <Text textAlign='left' padding='0.15rem'>
+              I consent to having this website store my submitted info
             </Text>
-          )}
+          </Flex>
         </FormControl>
         <Button
           type='submit'

@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Text } from '@chakra-ui/react'
+import { Box, Divider, Flex, Text, SimpleGrid } from '@chakra-ui/react'
 import { agents } from './agentContst'
 import AgentCard from './components/AgentCard/AgentCard'
 
@@ -28,15 +28,11 @@ const MeetTheTeam = () => {
       >
         The best in the industry, at your service 24/7
       </Text>
-      <Flex
-        direction={{ base: 'column', sm: 'row' }}
-        justifyContent='space-between'
-        gap='1.5rem'
-      >
+      <SimpleGrid columns={agents.length} margin='0 auto' minChildWidth='250px'>
         {agents.map(agent => (
           <AgentCard key={agent.name} {...agent} />
         ))}
-      </Flex>
+      </SimpleGrid>
     </Box>
   )
 }
