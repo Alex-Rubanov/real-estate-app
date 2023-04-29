@@ -14,6 +14,16 @@ export const usePropertyFormat = property => {
   const sqSize = Math.round(property.area)
   const externalID = property.externalID
 
+  const photos = property.photos?.map(photo => photo.url) || []
+  const description = property.description
+  const coverVideoUrl = property.coverVideo.url
+  const coverVideo = coverVideoUrl.slice(coverVideoUrl.length - 11)
+  const panorama = property.panoramas?.length ? property.panoramas[0].url : []
+  const amenitities = property.amenitities
+    ?.flatMap(({ amenities }) => amenities)
+    .map(item => item.text)
+  const furshied = property.funishingStatus
+
   return {
     address,
     coverPhoto,
@@ -24,6 +34,12 @@ export const usePropertyFormat = property => {
     baths,
     purpose,
     sqSize,
-    externalID
+    externalID,
+    photos,
+    description,
+    coverVideo,
+    panorama,
+    amenitities,
+    furshied
   }
 }
