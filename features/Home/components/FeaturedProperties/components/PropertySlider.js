@@ -17,7 +17,7 @@ const PropertySlider = ({ featuredProperties }) => {
       spaceBetween={10}
       loop={true}
       centeredSlides={true}
-      autoplay={{ delay: 3000, disableOnInteraction: true }}
+      autoplay={{ delay: 2500, disableOnInteraction: true }}
       pagination={{ dynamicBullets: true }}
       modules={[Autoplay, Pagination]}
       className='mySwiper'
