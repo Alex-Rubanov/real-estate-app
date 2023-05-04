@@ -6,7 +6,8 @@ const PropertyStats = ({ rooms, baths, price, sqSize }) => {
     <>
       <Box backgroundColor='white' padding='1.5rem' marginBottom='1rem'>
         <Flex
-          flexDirection={{ base: 'column', sm: 'row' }}
+          flexDirection={{ base: 'row', sm: 'row' }}
+          flexWrap='wrap'
           fontSize='xl'
           color='gray.500'
           fontWeight='light'
@@ -21,7 +22,7 @@ const PropertyStats = ({ rooms, baths, price, sqSize }) => {
             gap='0.3rem'
           >
             <Text>BEDS</Text>
-            <Flex alignItems='center' gap='0.5rem'>
+            <Flex alignItems='center' gap='0.3rem'>
               <TbBed />
               {rooms}
             </Flex>
@@ -36,7 +37,7 @@ const PropertyStats = ({ rooms, baths, price, sqSize }) => {
             gap='0.3rem'
           >
             <Text>BATHS</Text>
-            <Flex alignItems='center' gap='0.5rem'>
+            <Flex alignItems='center' gap='0.3rem'>
               <TbBath />
               {baths}
             </Flex>
@@ -51,7 +52,7 @@ const PropertyStats = ({ rooms, baths, price, sqSize }) => {
             gap='0.3rem'
           >
             <Text>SIZE</Text>
-            <Flex alignItems='center' gap='0.5rem'>
+            <Flex alignItems='center' gap='0.3rem'>
               <TbRuler />
               {sqSize}
               <sup>m2</sup>

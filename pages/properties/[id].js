@@ -1,8 +1,19 @@
+import PropertyMatterPortEmbed from '@/features/Property/components/PropertyMatterPortEmbed/PropertyMatterPortEmbed'
 import PropertyStats from '@/features/Property/components/PropertyStats/PropertyStats'
 import PropertyThumbnailSlider from '@/features/Property/components/PropertyThumbnailSlider.js/PropertyThumbnailSlider'
+import PropertyYoutubeEmbed from '@/features/Property/components/PropertyYoutubeEmbed/PropertyYoutubeEmbed'
 import { usePropertyFormat } from '@/features/common/Hooks/usePropertyFormat'
 import DefaultLayout from '@/features/common/modules/Layouts/DefaultLayout/DefaultLayout'
-import { Badge, Box, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
+import TextContentBox from '@/features/common/modules/TextContentBox/TextContentBox'
+import {
+  Badge,
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  SimpleGrid,
+  Text
+} from '@chakra-ui/react'
 import { TbMapPin } from 'react-icons/tb'
 
 const PropertySingle = ({ property }) => {
@@ -21,7 +32,7 @@ const PropertySingle = ({ property }) => {
     description,
     coverVideo,
     panorama,
-    amenitities,
+    amenities,
     furshied
   } = usePropertyFormat(property)
   return (
@@ -68,6 +79,39 @@ const PropertySingle = ({ property }) => {
               price={price}
               sqSize={sqSize}
             />
+            <TextContentBox title='Description'>
+              <Text
+                fontWeight='light'
+                color='gray.600'
+                fontSize='1rem'
+                noOfLines='4'
+              >
+                {description}
+              </Text>
+            </TextContentBox>
+
+            <TextContentBox title='Amenities'>
+              <SimpleGrid
+                columns={{ base: 1, sm: 2 }}
+                fontWeight='light'
+                color='gray.600'
+                fontSize='1rem'
+              >
+                {amenities.length
+                  ? amenities.map(item => <Text key={item}>{item}</Text>)
+                  : 'Please contant us for more info'}
+              </SimpleGrid>
+            </TextContentBox>
+          </GridItem>
+          <GridItem colSpan={{ base: 6, sm: 5, md: 3 }}>
+            <TextContentBox title='Video Walkthrough'>
+              <PropertyYoutubeEmbed coverVideo={coverVideo} />
+            </TextContentBox>
+          </GridItem>
+          <GridItem colSpan={{ base: 6, sm: 5, md: 3 }}>
+            <TextContentBox title='3D  Virtual Walkthrough'>
+              <PropertyMatterPortEmbed panorama={panorama} />
+            </TextContentBox>
           </GridItem>
         </Grid>
       </Box>

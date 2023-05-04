@@ -1,4 +1,5 @@
 export const usePropertyFormat = property => {
+  console.log(property)
   const address = property.location.map(item => item.name).join(', ')
   const coverPhoto = property.coverPhoto.url
   const propertyType = property.category.map(item => item.name).join(', ')
@@ -19,7 +20,7 @@ export const usePropertyFormat = property => {
   const coverVideoUrl = property.coverVideo.url
   const coverVideo = coverVideoUrl.slice(coverVideoUrl.length - 11)
   const panorama = property.panoramas?.length ? property.panoramas[0].url : []
-  const amenitities = property.amenitities
+  const amenities = property.amenities
     ?.flatMap(({ amenities }) => amenities)
     .map(item => item.text)
   const furshied = property.funishingStatus
@@ -39,7 +40,7 @@ export const usePropertyFormat = property => {
     description,
     coverVideo,
     panorama,
-    amenitities,
+    amenities,
     furshied
   }
 }
