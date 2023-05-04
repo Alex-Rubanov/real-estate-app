@@ -8,21 +8,21 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-const PropertySlider = ({ featuredProperties }) => {
+const PropertySlider = ({ properties }) => {
   const { isDesktop } = useIdDesktop()
-
+  console.log(isDesktop)
   return (
     <Swiper
       slidesPerView={isDesktop ? 3 : 1}
       spaceBetween={10}
       loop={true}
       centeredSlides={true}
-      autoplay={{ delay: 2500, disableOnInteraction: true }}
+      autoplay={{ delay: 3000, disableOnInteraction: true }}
       pagination={{ dynamicBullets: true }}
       modules={[Autoplay, Pagination]}
       className='mySwiper'
     >
-      {featuredProperties.map(property => (
+      {properties.map(property => (
         <SwiperSlide key={property.id}>
           <PropertyCard property={property} />
         </SwiperSlide>

@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react'
 
 export const useIdDesktop = () => {
-  const [isDesktop, setIsDesktop] = useState(true)
+  const [isDesktop, setIsDesktop] = useState(null)
 
   useEffect(() => {
     if (window.innerWidth < 750) {
       setIsDesktop(false)
+    } else {
+      setIsDesktop(true)
     }
 
     const upadateMedia = () => {
       if (window.innerWidth < 750) {
         setIsDesktop(false)
+      } else {
+        setIsDesktop(true)
       }
     }
 

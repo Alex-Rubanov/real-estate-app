@@ -10,7 +10,7 @@ export default function Home ({ featuredProperties }) {
     <>
       <DefaultLayout>
         <HeroBanner />
-        <FeaturedProperties featuredProperties={featuredProperties} />
+        <FeaturedProperties properties={featuredProperties} />
         <MeetTheTeam />
         <Partners />
         <Testimonials />

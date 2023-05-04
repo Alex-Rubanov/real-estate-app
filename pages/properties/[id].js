@@ -1,9 +1,10 @@
+import PropertyThumbnailSlider from '@/features/Property/components/PropertyThumbnailSlider.js/PropertyThumbnailSlider'
 import { usePropertyFormat } from '@/features/common/Hooks/usePropertyFormat'
 import DefaultLayout from '@/features/common/modules/Layouts/DefaultLayout/DefaultLayout'
 import { Badge, Box, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
 import { TbMapPin } from 'react-icons/tb'
 
-const PropertySinglePage = ({ property }) => {
+const PropertySingle = ({ property }) => {
   const {
     address,
     coverPhoto,
@@ -24,7 +25,7 @@ const PropertySinglePage = ({ property }) => {
   } = usePropertyFormat(property)
   return (
     <DefaultLayout>
-      <Box backgroundColor='#f7f8f9' padingY='3rem'>
+      <Box backgroundColor='#f7f8f9' paddingY='3rem'>
         <Grid
           templateColumns='repeat(6, 1fr)'
           gap='5'
@@ -56,13 +57,16 @@ const PropertySinglePage = ({ property }) => {
               <Badge colorScheme='green'>{purpose}</Badge>
             </Flex>
           </GridItem>
+          <GridItem colSpan={{ base: 6, sm: 4, md: 3 }}>
+            <PropertyThumbnailSlider photos={photos} />
+          </GridItem>
         </Grid>
       </Box>
     </DefaultLayout>
   )
 }
 
-export default PropertySinglePage
+export default PropertySingle
 
 export async function getServerSideProps (context) {
   const property = await require('@/features/data/property')
