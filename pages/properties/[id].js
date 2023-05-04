@@ -1,3 +1,4 @@
+import PropertyStats from '@/features/Property/components/PropertyStats/PropertyStats'
 import PropertyThumbnailSlider from '@/features/Property/components/PropertyThumbnailSlider.js/PropertyThumbnailSlider'
 import { usePropertyFormat } from '@/features/common/Hooks/usePropertyFormat'
 import DefaultLayout from '@/features/common/modules/Layouts/DefaultLayout/DefaultLayout'
@@ -25,7 +26,7 @@ const PropertySingle = ({ property }) => {
   } = usePropertyFormat(property)
   return (
     <DefaultLayout>
-      <Box backgroundColor='#f7f8f9' paddingY='3rem'>
+      <Box backgroundColor='#f7f8f9' padding='3rem 0.5rem'>
         <Grid
           templateColumns='repeat(6, 1fr)'
           gap='5'
@@ -59,6 +60,14 @@ const PropertySingle = ({ property }) => {
           </GridItem>
           <GridItem colSpan={{ base: 6, sm: 4, md: 3 }}>
             <PropertyThumbnailSlider photos={photos} />
+          </GridItem>
+          <GridItem colSpan={{ base: 6, md: 3 }}>
+            <PropertyStats
+              rooms={rooms}
+              baths={baths}
+              price={price}
+              sqSize={sqSize}
+            />
           </GridItem>
         </Grid>
       </Box>
