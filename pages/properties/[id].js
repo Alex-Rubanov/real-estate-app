@@ -1,3 +1,4 @@
+import { getProperty } from '@/features/Property/api/getProperty'
 import PropertyMatterPortEmbed from '@/features/Property/components/PropertyMatterPortEmbed/PropertyMatterPortEmbed'
 import PropertyStats from '@/features/Property/components/PropertyStats/PropertyStats'
 import PropertyThumbnailSlider from '@/features/Property/components/PropertyThumbnailSlider.js/PropertyThumbnailSlider'
@@ -33,6 +34,8 @@ const PropertySingle = ({ property }) => {
     panorama,
     amenities
   } = usePropertyFormat(property)
+
+  console.log(amenities)
   return (
     <DefaultLayout>
       <Box backgroundColor='#f7f8f9' padding='3rem 0.5rem'>
@@ -125,3 +128,12 @@ export async function getServerSideProps (context) {
     props: { property }
   }
 }
+
+// export async function getServerSideProps (context) {
+//   const { id } = context.query
+
+//   const property = await getProperty(id)
+//   return {
+//     props: { property }
+//   }
+// }

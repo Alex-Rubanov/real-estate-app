@@ -3,6 +3,7 @@ import HeroBanner from '@/features/Home/components/HeroBanner/HeroBanner'
 import MeetTheTeam from '@/features/Home/components/MeetTheTeam/MeetTheTeam'
 import Partners from '@/features/Home/components/Partners/Partners'
 import Testimonials from '@/features/Home/components/Testimonials/Testimonials'
+import { getProperties } from '@/features/common/api/getProperties'
 import DefaultLayout from '@/features/common/modules/Layouts/DefaultLayout/DefaultLayout'
 
 export default function Home ({ featuredProperties }) {
@@ -25,3 +26,10 @@ export async function getStaticProps () {
     props: { featuredProperties: hits.slice(0, 5) }
   }
 }
+
+// export async function getStaticProps () {
+//   const properties = await getProperties(5)
+//   return {
+//     props: { featuredProperties: properties }
+//   }
+// }

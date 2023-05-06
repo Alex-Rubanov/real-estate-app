@@ -25,7 +25,6 @@ const HeroForm = () => {
       borderRadius='sm'
       backgroundColor='white'
       color='gray.700'
-      textAlign='center'
     >
       <Text fontSize='xl' fontWeight='bold'>
         Free PDF Guide
@@ -35,6 +34,7 @@ const HeroForm = () => {
         <FormControl>
           <Input
             marginTop='1.3rem'
+            borderColor={errors.name ? 'red' : null}
             id='name'
             type='text'
             placeholder='Name'
@@ -42,57 +42,68 @@ const HeroForm = () => {
           />
           {errors.name && (
             <Text fontSize='xs' color='red.400'>
-              {errors.name.type}
+              {`*${errors.name.type}`}
             </Text>
           )}
           <Flex
             flexDirection={{ base: 'column', md: 'row' }}
-            gap={{ base: '0', sm: '1rem' }}
+            gap={{ base: '0', md: '0.5rem' }}
           >
             <Input
               marginTop='1.3rem'
+              borderColor={errors.email ? 'red' : null}
               id='email'
               type='text'
               placeholder='Email'
               {...register('email', { required: true })}
             />
             {errors.email && (
-              <Text fontSize='xs' color='red.400'>
-                {errors.email.type}
+              <Text
+                fontSize='xs'
+                color='red.400'
+                alignSelf={{ base: 'flex-start', md: 'center' }}
+                gap='0'
+              >
+                {`*${errors.email.type}`}
               </Text>
             )}
             <Input
               marginTop='1.3rem'
+              borderColor={errors.phone ? 'red' : null}
               id='phone'
               type='text'
               placeholder='Phone'
               {...register('phone', { required: true })}
             />
             {errors.phone && (
-              <Text fontSize='xs' color='red.400'>
-                {errors.phone.type}
+              <Text
+                fontSize='xs'
+                color='red.400'
+                alignSelf={{ base: 'flex-start', md: 'center' }}
+              >
+                {`*${errors.phone.type}`}
               </Text>
             )}
           </Flex>
-          <Flex marginTop='1.3rem'>
-            <Checkbox
-              lineHeight='1.2'
-              padding='0.5rem'
-              id='gdpr'
-              alignItems='flex-start'
-              type='checkbox'
-              placeholder='GDPR'
-              {...register('gdpr', { required: true })}
-            ></Checkbox>
-            {errors.gdpr && (
-              <Text fontSize='xs' color='red.400'>
-                {errors.gdpr.type}
-              </Text>
-            )}
-            <Text textAlign='left' padding='0.15rem'>
+
+          <Checkbox
+            marginTop='1.3rem'
+            marginLeft='0'
+            borderColor={errors.gdpr ? 'red' : null}
+            id='gdpr'
+            type='checkbox'
+            placeholder='GDPR'
+            {...register('gdpr', { required: true })}
+          >
+            <Text fontSize='0.8rem' color='gray.500'>
               I consent to having this website store my submitted info
             </Text>
-          </Flex>
+          </Checkbox>
+          {errors.gdpr && (
+            <Text fontSize='xs' color='red.400'>
+              {`*${errors.gdpr.type}`}
+            </Text>
+          )}
         </FormControl>
         <Button
           type='submit'

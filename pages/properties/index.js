@@ -1,8 +1,10 @@
+import { getProperties } from '@/features/common/api/getProperties'
 import DefaultLayout from '@/features/common/modules/Layouts/DefaultLayout/DefaultLayout'
 import PropertyCard from '@/features/common/modules/PropertyCard/PropertyCard'
 import { Box, SimpleGrid } from '@chakra-ui/react'
 
 const Properties = ({ properties }) => {
+  console.log(properties)
   return (
     <DefaultLayout>
       <Box backgroundColor='#f7f8f9' padding='3rem'>
@@ -20,7 +22,7 @@ const Properties = ({ properties }) => {
     </DefaultLayout>
   )
 }
-
+console.log(process.env.RAPID_API_KEY)
 export default Properties
 
 export async function getStaticProps () {
@@ -29,3 +31,10 @@ export async function getStaticProps () {
     props: { properties: hits }
   }
 }
+
+// export async function getStaticProps () {
+//   const properties = await getProperties(20)
+//   return {
+//     props: { properties: properties }
+//   }
+// }
