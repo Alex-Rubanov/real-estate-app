@@ -19,7 +19,6 @@ import { TbMapPin } from 'react-icons/tb'
 const PropertySingle = ({ property }) => {
   const {
     address,
-    coverPhoto,
     propertyType,
     price,
     title,
@@ -32,8 +31,7 @@ const PropertySingle = ({ property }) => {
     description,
     coverVideo,
     panorama,
-    amenities,
-    furshied
+    amenities
   } = usePropertyFormat(property)
   return (
     <DefaultLayout>

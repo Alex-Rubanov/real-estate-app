@@ -10,7 +10,7 @@ import 'swiper/css/pagination'
 
 const PropertySlider = ({ properties }) => {
   const { isDesktop } = useIdDesktop()
-  console.log(isDesktop)
+
   return (
     <Swiper
       slidesPerView={isDesktop ? 3 : 1}

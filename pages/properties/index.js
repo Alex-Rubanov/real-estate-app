@@ -3,7 +3,6 @@ import PropertyCard from '@/features/common/modules/PropertyCard/PropertyCard'
 import { Box, SimpleGrid } from '@chakra-ui/react'
 
 const Properties = ({ properties }) => {
-  console.log(properties)
   return (
     <DefaultLayout>
       <Box backgroundColor='#f7f8f9' padding='3rem'>
