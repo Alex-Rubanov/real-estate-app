@@ -5,18 +5,28 @@ import {
   Flex,
   FormControl,
   Input,
-  Text
+  Text,
+  useDisclosure
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 
+import ModalPopup from '@/features/common/Modal/ModalPopup'
+
 const HeroForm = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors }
   } = useForm()
 
-  const onSubmit = data => console.log(data)
+  const onSubmit = data => {
+    console.log(data)
+    reset()
+    onOpen()
+  }
 
   return (
     <Box
@@ -116,6 +126,12 @@ const HeroForm = () => {
           Donwload Now
         </Button>
       </form>
+      <ModalPopup
+        isOpen={isOpen}
+        onClose={onClose}
+        title='Your Personal PDF Guide'
+        description='Congrats! Your personal guide is waiting now for you on your email.'
+      />
     </Box>
   )
 }

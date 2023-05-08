@@ -14,6 +14,7 @@ const PropertySlider = ({ properties }) => {
   return (
     <Swiper
       slidesPerView={isDesktop ? 3 : 1}
+      initialSlide={isDesktop ? 1 : 0}
       spaceBetween={10}
       loop={true}
       centeredSlides={true}

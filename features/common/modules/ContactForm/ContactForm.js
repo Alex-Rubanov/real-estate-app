@@ -5,18 +5,28 @@ import {
   FormControl,
   Input,
   Text,
+  useDisclosure,
   Textarea
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 
+import ModalPopup from '../../Modal/ModalPopup'
+
 const ContactForm = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors }
   } = useForm()
 
-  const onSubmit = data => console.log(data)
+  const onSubmit = data => {
+    console.log(data)
+    reset()
+    onOpen()
+  }
 
   return (
     <Box
@@ -107,6 +117,12 @@ const ContactForm = () => {
           Send Message
         </Button>
       </form>
+      <ModalPopup
+        isOpen={isOpen}
+        onClose={onClose}
+        title='Your Message'
+        description='Thank you! Your message has been successfully sent.'
+      />
     </Box>
   )
 }

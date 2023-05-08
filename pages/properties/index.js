@@ -22,7 +22,7 @@ const Properties = ({ properties }) => {
     </DefaultLayout>
   )
 }
-console.log(process.env.RAPID_API_KEY)
+
 export default Properties
 
 export async function getStaticProps () {
