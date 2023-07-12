@@ -1,6 +1,7 @@
 import { HiPhoneArrowUpRight } from 'react-icons/hi2';
 
 export const navigationLinks = [
+  { title: 'Home', link: '/' },
   { title: 'Properties', link: '/properties' },
   { title: 'Contact', link: '/contact' },
   {
