@@ -1,1 +1,1 @@
-export { default } from './TextContentBox'
+export { default } from './TextContentBox';

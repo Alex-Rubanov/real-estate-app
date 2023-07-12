@@ -1,1 +1,1 @@
-export { default } from './PropertyStats'
+export { default } from './PropertyStats';

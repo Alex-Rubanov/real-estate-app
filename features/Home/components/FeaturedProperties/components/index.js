@@ -1,1 +1,1 @@
-export { defalut } from './PropertySlider'
+export { default } from './PropertySlider';

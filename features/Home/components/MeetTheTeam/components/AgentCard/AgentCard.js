@@ -1,43 +1,36 @@
-import { Box, Image, Text } from '@chakra-ui/react'
+import { Box, Image, Text } from '@chakra-ui/react';
 
 const AgentCard = ({ name, image, description, title }) => {
   return (
     <Box
-      backgroundColor='#f1f1f14a'
-      padding='2rem'
-      display='flex'
-      flexDirection='column'
-      alignItems='center'
-      justifyContent='center'
+      backgroundColor="#f1f1f14a"
+      padding="2rem"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
       marginBottom={{ base: '1rem', sm: '0' }}
-      textAlign='center'
-    >
+      textAlign="center">
       <Image
         src={image}
-        width='10rem'
-        height='10rem'
-        objectFit='cover'
-        borderRadius='full'
-        marginBottom='2rem'
-        shadow='md'
+        width="10rem"
+        height="10rem"
+        objectFit="cover"
+        borderRadius="full"
+        marginBottom="2rem"
+        shadow="md"
       />
-      <Text color='blue.400' fontSize='xl' fontWeight='bold'>
+      <Text color="blue.400" fontSize="xl" fontWeight="bold">
         {name}
       </Text>
-      <Text fontSize='lg' color='blue.600'>
+      <Text fontSize="lg" color="blue.600">
         {title}
       </Text>
-      <Text
-        fontSize='md'
-        fontWeight='light'
-        noOfLines='4'
-        marginTop='1rem'
-        color='gray.600'
-      >
+      <Text fontSize="md" fontWeight="light" noOfLines="4" marginTop="1rem" color="gray.600">
         {description}
       </Text>
     </Box>
-  )
-}
+  );
+};
 
-export default AgentCard
+export default AgentCard;

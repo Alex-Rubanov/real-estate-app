@@ -1,1 +1,1 @@
-export { default } from './PropertyMatterPortEmbed'
+export { default } from './PropertyMatterPortEmbed';

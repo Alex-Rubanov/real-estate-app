@@ -1,5 +1,5 @@
-import Navigation from '../../Navigation'
-import Footer from '@/features/common/Footer/Footer'
+import Navigation from '../../Navigation';
+import Footer from '@/features/common/Footer/Footer';
 
 const DefaultLayout = ({ children }) => {
   return (
@@ -8,7 +8,7 @@ const DefaultLayout = ({ children }) => {
       {children}
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default DefaultLayout
+export default DefaultLayout;

@@ -3,5 +3,5 @@ export const partners = [
   'partners/partner2.png',
   'partners/partner3.png',
   'partners/partner4.svg',
-  'partners/partner5.jpg'
-]
+  'partners/partner5.jpg',
+];

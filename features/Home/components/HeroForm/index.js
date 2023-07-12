@@ -1,1 +1,1 @@
-export { default } from './HeroForm'
+export { default } from './HeroForm';

@@ -1,37 +1,36 @@
-import { useState } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { FreeMode, Navigation, Thumbs } from 'swiper'
+import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Navigation, Thumbs } from 'swiper';
 
-import 'swiper/css'
-import 'swiper/css/free-mode'
-import 'swiper/css/navigation'
-import 'swiper/css/thumbs'
-import { Divider } from '@chakra-ui/react'
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+import { Divider } from '@chakra-ui/react';
 
 const PropertyThumbnailSlider = ({ photos }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null)
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <>
       <Swiper
         style={{
           '--swiper-navigaion-color': '#fff',
-          '--swiper-pagination-color': '#fff'
+          '--swiper-pagination-color': '#fff',
         }}
         loop={true}
         navigation={true}
         thumbs={{
-          swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
+          swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
         }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className='mySwiper2'
-      >
-        {photos.map(image => (
+        className="mySwiper2">
+        {photos.map((image) => (
           <SwiperSlide key={image}>
-            <img src={image} alt='property-image' />
+            <img src={image} alt="property-image" />
           </SwiperSlide>
         ))}
       </Swiper>
-      <Divider marginY='1rem' />
+      <Divider marginY="1rem" />
       <Swiper
         onSwiper={setThumbsSwiper}
         loop={true}
@@ -40,16 +39,15 @@ const PropertyThumbnailSlider = ({ photos }) => {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className='mySwiper'
-      >
-        {photos.map(image => (
+        className="mySwiper">
+        {photos.map((image) => (
           <SwiperSlide key={image}>
-            <img src={image} alt='property-image' />
+            <img src={image} alt="property-image" />
           </SwiperSlide>
         ))}
       </Swiper>
     </>
-  )
-}
+  );
+};
 
-export default PropertyThumbnailSlider
+export default PropertyThumbnailSlider;

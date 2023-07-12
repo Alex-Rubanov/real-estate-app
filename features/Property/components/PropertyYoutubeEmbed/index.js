@@ -1,1 +1,1 @@
-export { default } from './PropertyYoutubeEmbed'
+export { default } from './PropertyYoutubeEmbed';

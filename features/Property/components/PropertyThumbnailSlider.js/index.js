@@ -1,1 +1,1 @@
-export { default } from './PropertyThumbnailSlider'
+export { default } from './PropertyThumbnailSlider';

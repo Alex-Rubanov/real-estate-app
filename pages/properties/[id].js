@@ -1,21 +1,13 @@
-import { getProperty } from '@/features/Property/api/getProperty'
-import PropertyMatterPortEmbed from '@/features/Property/components/PropertyMatterPortEmbed/PropertyMatterPortEmbed'
-import PropertyStats from '@/features/Property/components/PropertyStats/PropertyStats'
-import PropertyThumbnailSlider from '@/features/Property/components/PropertyThumbnailSlider.js/PropertyThumbnailSlider'
-import PropertyYoutubeEmbed from '@/features/Property/components/PropertyYoutubeEmbed/PropertyYoutubeEmbed'
-import { usePropertyFormat } from '@/features/common/Hooks/usePropertyFormat'
-import DefaultLayout from '@/features/common/modules/Layouts/DefaultLayout/DefaultLayout'
-import TextContentBox from '@/features/common/modules/TextContentBox/TextContentBox'
-import {
-  Badge,
-  Box,
-  Flex,
-  Grid,
-  GridItem,
-  SimpleGrid,
-  Text
-} from '@chakra-ui/react'
-import { TbMapPin } from 'react-icons/tb'
+import { getProperty } from '@/features/Property/api/getProperty';
+import PropertyMatterPortEmbed from '@/features/Property/components/PropertyMatterPortEmbed/PropertyMatterPortEmbed';
+import PropertyStats from '@/features/Property/components/PropertyStats/PropertyStats';
+import PropertyThumbnailSlider from '@/features/Property/components/PropertyThumbnailSlider.js/PropertyThumbnailSlider';
+import PropertyYoutubeEmbed from '@/features/Property/components/PropertyYoutubeEmbed/PropertyYoutubeEmbed';
+import { usePropertyFormat } from '@/features/common/Hooks/usePropertyFormat';
+import DefaultLayout from '@/features/common/modules/Layouts/DefaultLayout/DefaultLayout';
+import TextContentBox from '@/features/common/modules/TextContentBox/TextContentBox';
+import { Badge, Box, Flex, Grid, GridItem, SimpleGrid, Text } from '@chakra-ui/react';
+import { TbMapPin } from 'react-icons/tb';
 
 const PropertySingle = ({ property }) => {
   const {
@@ -32,107 +24,90 @@ const PropertySingle = ({ property }) => {
     description,
     coverVideo,
     panorama,
-    amenities
-  } = usePropertyFormat(property)
+    amenities,
+  } = usePropertyFormat(property);
 
-  console.log(amenities)
   return (
     <DefaultLayout>
-      <Box backgroundColor='#f7f8f9' padding='3rem 0.5rem'>
-        <Grid
-          templateColumns='repeat(6, 1fr)'
-          gap='5'
-          maxWidth='1280px'
-          margin='0 auto'
-        >
-          <GridItem colSpan='6'>
+      <Box backgroundColor="#f7f8f9" padding="3rem 0.5rem">
+        <Grid templateColumns="repeat(6, 1fr)" gap="5" maxWidth="1280px" margin="0 auto">
+          <GridItem colSpan="6">
             <Text
-              fontSize='3xl'
-              fontWeight='medium'
-              color='blue.800'
-              textAlign={{ base: 'center', sm: 'left' }}
-            >
+              fontSize="3xl"
+              fontWeight="medium"
+              color="blue.800"
+              textAlign={{ base: 'center', sm: 'left' }}>
               {propertyType} {title}
             </Text>
             <Flex
-              fontSize='xl'
-              color='blue.600'
-              textAlign='center'
-              alignItems='center'
+              fontSize="xl"
+              color="blue.600"
+              textAlign="center"
+              alignItems="center"
               flexDirection={{ base: 'column', sm: 'row' }}
-              gap='0.5rem'
-              marginY={{ base: '1rem', sm: '0' }}
-            >
+              gap="0.5rem"
+              marginY={{ base: '1rem', sm: '0' }}>
               <TbMapPin />
-              <Text fontWeight='light'>
+              <Text fontWeight="light">
                 {address} -ID:{externalID}
               </Text>
-              <Badge colorScheme='green'>{purpose}</Badge>
+              <Badge colorScheme="green">{purpose}</Badge>
             </Flex>
           </GridItem>
           <GridItem colSpan={{ base: 6, sm: 4, md: 3 }}>
             <PropertyThumbnailSlider photos={photos} />
           </GridItem>
           <GridItem colSpan={{ base: 6, md: 3 }}>
-            <PropertyStats
-              rooms={rooms}
-              baths={baths}
-              price={price}
-              sqSize={sqSize}
-            />
-            <TextContentBox title='Description'>
-              <Text
-                fontWeight='light'
-                color='gray.600'
-                fontSize='1rem'
-                noOfLines='4'
-              >
+            <PropertyStats rooms={rooms} baths={baths} price={price} sqSize={sqSize} />
+            <TextContentBox title="Description">
+              <Text fontWeight="light" color="gray.600" fontSize="1rem" noOfLines="4">
                 {description}
               </Text>
             </TextContentBox>
 
-            <TextContentBox title='Amenities'>
+            <TextContentBox title="Amenities">
               <SimpleGrid
                 columns={{ base: 1, sm: 2 }}
-                fontWeight='light'
-                color='gray.600'
-                fontSize='1rem'
-              >
+                fontWeight="light"
+                color="gray.600"
+                fontSize="1rem">
                 {amenities.length
-                  ? amenities.map(item => <Text key={item}>{item}</Text>)
+                  ? amenities.map((item) => <Text key={item}>{item}</Text>)
                   : 'Please contant us for more info'}
               </SimpleGrid>
             </TextContentBox>
           </GridItem>
           <GridItem colSpan={{ base: 6, sm: 5, md: 3 }}>
-            <TextContentBox title='Video Walkthrough'>
+            <TextContentBox title="Video Walkthrough">
               <PropertyYoutubeEmbed coverVideo={coverVideo} />
             </TextContentBox>
           </GridItem>
           <GridItem colSpan={{ base: 6, sm: 5, md: 3 }}>
-            <TextContentBox title='3D  Virtual Walkthrough'>
+            <TextContentBox title="3D  Virtual Walkthrough">
               <PropertyMatterPortEmbed panorama={panorama} />
             </TextContentBox>
           </GridItem>
         </Grid>
       </Box>
     </DefaultLayout>
-  )
-}
+  );
+};
 
-export default PropertySingle
+export default PropertySingle;
 
-export async function getServerSideProps (context) {
-  const property = await require('@/features/data/property')
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+
+  const property = await getProperty(id);
   return {
-    props: { property }
-  }
+    props: { property },
+  };
 }
+
+//LEAVING THIS CODE JUST IN CASE IF PROBLEMS WITH API OCCURE IN THE FUTUTE
 
 // export async function getServerSideProps (context) {
-//   const { id } = context.query
-
-//   const property = await getProperty(id)
+//   const property = await require('@/features/data/property')
 //   return {
 //     props: { property }
 //   }

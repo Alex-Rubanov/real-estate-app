@@ -1,27 +1,25 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 export const useIdDesktop = () => {
-  const [isDesktop, setIsDesktop] = useState(null)
+  const [isDesktop, setIsDesktop] = useState(true);
 
   useEffect(() => {
     if (window.innerWidth < 750) {
-      setIsDesktop(false)
-    } else {
-      setIsDesktop(true)
+      setIsDesktop(false);
     }
 
-    const upadateMedia = () => {
+    const updateMedia = () => {
       if (window.innerWidth < 750) {
-        setIsDesktop(false)
+        setIsDesktop(false);
       } else {
-        setIsDesktop(true)
+        setIsDesktop(true);
       }
-    }
+    };
 
-    window.addEventListener('resize', upadateMedia)
+    window.addEventListener('resize', updateMedia);
 
-    return () => window.removeEventListener('resize', upadateMedia)
-  }, [])
+    return () => window.removeEventListener('resize', updateMedia);
+  }, []);
 
-  return { isDesktop }
-}
+  return { isDesktop };
+};

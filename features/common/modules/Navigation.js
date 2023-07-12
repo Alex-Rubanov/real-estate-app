@@ -1,5 +1,5 @@
-import NavigationDesktop from './Navigation/NavigationDesktop/NavigationDesktop'
-import NavigationMobile from './Navigation/NavigationMobile/NavigationMobile'
+import NavigationDesktop from './Navigation/NavigationDesktop/NavigationDesktop';
+import NavigationMobile from './Navigation/NavigationMobile/NavigationMobile';
 
 const Navigation = () => {
   return (
@@ -7,7 +7,7 @@ const Navigation = () => {
       <NavigationDesktop />
       <NavigationMobile />
     </>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

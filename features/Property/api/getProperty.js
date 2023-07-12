@@ -1,11 +1,11 @@
-import { http } from '@/lib/axios'
+import { http } from '@/lib/axios';
 
-export const getProperty = async id => {
+export const getProperty = async (id) => {
   const { data } = await http.get('/properties/detail', {
     params: {
-      externalID: id
-    }
-  })
+      externalID: id,
+    },
+  });
 
-  return data
-}
+  return data;
+};

@@ -1,4 +1,4 @@
-import { HiPhoneArrowUpRight } from 'react-icons/hi2'
+import { HiPhoneArrowUpRight } from 'react-icons/hi2';
 
 export const navigationLinks = [
   { title: 'Properties', link: '/properties' },
@@ -6,6 +6,6 @@ export const navigationLinks = [
   {
     title: '(800) 555 555',
     link: 'tel:(800) 555 555',
-    icon: <HiPhoneArrowUpRight />
-  }
-]
+    icon: <HiPhoneArrowUpRight />,
+  },
+];
