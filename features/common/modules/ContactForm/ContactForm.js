@@ -81,12 +81,12 @@ const ContactForm = () => {
             id="message"
             type="text"
             placeholder="Message"
-            {...register('message', { required: true, pattern: /\S{15}/ })}
+            {...register('message', { required: true, pattern: /\S/ })}
           />
           {errors.message && (
             <Text fontSize="xs" color="red.400">
               {errors.message.type === 'pattern'
-                ? 'Pleave provide correct information*(min 15 characters)'
+                ? 'Pleave provide information*'
                 : errors.message.type}
             </Text>
           )}
