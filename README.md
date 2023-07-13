@@ -1,38 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">DreamHouse</h1>
 
-## Getting Started
+####  !IMPORTATNT! The API used for this application operates under a FREEMIUM model, which means that there is a monthly limit of 500 requests. Once this limit is reached, further requests may require a premium subscription or additional payment.
+---
 
-First, run the development server:
+[DREAMHOUSE WEB APPLICATION](https://dreamhouse-snowy.vercel.app/)         (Desktop + Mobile version)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+This project was created to represent the real estate market in the UAE. Whether you are interested in learning more about the available apartments for sale in Dubai or wish to explore current prices and anticipate purchasing a house in the region, this web application is designed to be extremely useful.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+In addition to providing a comprehensive list of available apartments with detailed descriptions, our web application offers the unique feature of viewing actual videos and taking fascinating virtual walkthroughs of your dream apartment.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+At our company, we take pride in having the best real estate agents who are eager to assist you in making the best choice. You can find information about our agents on the main page, along with testimonials from our satisfied clients and trusted international companies who have already chosen to work with us. If you would like a free consultation, please don't hesitate to contact us. All the necessary information can be found on our contact page.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1689199310/hero_yeywyo.png" />
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+  Stack:
+---
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js
+- React Hook Form
+- React Icons
+- Swiper
+- Chakra UI
+---
+- Rapid API
+- axios
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<div>
+  <img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1689199309/properties-loading_it2tte.png" width='400'/>
+  <img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1689199310/properties-loaded_hbxovc.png" width='400'/>
+</div>
 
-## Deploy on Vercel
+<img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1689199309/preperty-details_iahpgs.png" />
+<img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1689199311/property-details2_foep7v.png" />
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<div>
+  <img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1689199308/hero3_jlew2o.png" width='400'/>
+  <img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1689199308/hero4_bp2hun.png" width='400'/>
+</div>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<div>
+  <img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1689199307/contacts_eugpmc.png" width='400'/>
+  <img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1689199307/contacts2_bzx6eh.png" width='400'/>
+</div>
+
+---
+
